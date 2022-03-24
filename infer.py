@@ -24,9 +24,7 @@ import collections
 from PIL import Image
 import sys 
 from tqdm import tqdm
-from network import Generator, Feature_Decoder
 from resnet import ResNet34
-import vgg
 
 sys.path.insert(0,os.path.abspath('..'))
 
@@ -340,6 +338,7 @@ def main(args):
 
 
 if __name__ == "__main__":
+    '''
     parser = argparse.ArgumentParser(description='PyTorch CIFAR10/100 Inversion')
     parser.add_argument('--ngpu', type=str, default='0',
                         help='device number') 
@@ -371,7 +370,7 @@ if __name__ == "__main__":
     parser.add_argument('--global_iter', type=int, 
                         help='global itertation number')
     args = parser.parse_args()
-    
     os.environ["CUDA_VISIBLE_DEVICES"] = args.ngpu
+    '''
 
     main(args)
